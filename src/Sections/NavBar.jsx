@@ -15,7 +15,7 @@ const NavBar = ({ project, main, setPro }) => {
       >
         Add Project
       </button>
-      <div className="pt-5 overflow-y-auto h-[80%] mt-5 ">
+      <div className="pt-5 overflow-y-auto h-[80%] mt-5 px-3 ">
         {project.map((i, ind) => (
           <button
             key={ind}

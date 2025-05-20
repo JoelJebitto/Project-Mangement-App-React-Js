@@ -56,7 +56,7 @@ function App() {
         setPro={setPro}
         main={setMain}
       />
-      <MainSection main={main} />
+      <MainSection main={main} setMain={setMain} addProject={addProject} />
 
 
     </div>

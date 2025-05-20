@@ -2,7 +2,7 @@
 import ProjectCreate from "../MainSection/ProjectCreate";
 import Project from "../MainSection/Project";
 import Default from "../MainSection/Default";
-const MainSection = ({ main }) => {
+const MainSection = (props) => {
   return (
     <div
       id="main"
@@ -10,7 +10,7 @@ const MainSection = ({ main }) => {
     >
 
       {
-        (main === 0) ? <ProjectCreate /> : (main === 1) ? <Project /> : <Default />
+        (props.main === 0) ? <ProjectCreate {...props} /> : (props.main === 1) ? <Project {...props} /> : <Default {...props} />
       }
     </div>
   );
