@@ -1,4 +1,4 @@
-const ProjectCreate = () => {
+const ProjectCreate = ({ }) => {
   return (
     <div>Default - 1</div>
   );

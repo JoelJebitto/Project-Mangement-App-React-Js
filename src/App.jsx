@@ -1,27 +1,28 @@
 import { useState } from "react";
 import MainSection from "./Sections/MainSection";
 import NavBar from "./Sections/NavBar";
+import { useEffect } from "react";
 
 
 function App() {
   const [data, setData] = useState([]);
   const [main, setMain] = useState(null);
+  const [pro, setPro] = useState(null);
   // data[1] = {
   //  title: string,
-  //  discription: string,
+  //  description: string,
   //  Due Date: date
   //  todo : [ list of string todo ]
   // }
 
-  const addProject = (title = "", discription = "", dueDate = "") => {
+  const addProject = (title = "", description = "", dueDate = "") => {
     setData([
       ...data,
       {
         title: title,
-        discription: discription,
+        description: description,
         dueDate: dueDate,
         todo: [],
-        id: data.length() == 0 ? 0 : data[data.length() - 1].id + 1,
       },
     ]);
   };
@@ -44,12 +45,15 @@ function App() {
     setData(temp);
   };
 
+  useEffect(() => {
+
+    addProject("Hi", "hello", "...")
+  }, [main])
   return (
     <div className="flex h-screen">
       <NavBar
         project={data}
-        addProject={addProject}
-        removeProject={removeProject}
+        setPro={setPro}
         main={setMain}
       />
       <MainSection main={main} />
