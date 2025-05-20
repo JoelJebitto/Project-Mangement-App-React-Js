@@ -2,8 +2,10 @@ import { useState } from "react";
 import MainSection from "./Sections/MainSection";
 import NavBar from "./Sections/NavBar";
 
+
 function App() {
   const [data, setData] = useState([]);
+  const [main, setMain] = useState(null);
   // data[1] = {
   //  title: string,
   //  discription: string,
@@ -44,8 +46,15 @@ function App() {
 
   return (
     <div className="flex h-screen">
-      <NavBar />
-      <MainSection />
+      <NavBar
+        project={data}
+        addProject={addProject}
+        removeProject={removeProject}
+        main={setMain}
+      />
+      <MainSection main={main} />
+
+
     </div>
   );
 }

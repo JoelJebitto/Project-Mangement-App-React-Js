@@ -1,6 +1,7 @@
-import ReactDOM from "react-dom";
 const ProjectCreate = () => {
-  return <div>Create Project</div>;
+  return (
+    <div>Default - 1</div>
+  );
 };
 
 export default ProjectCreate;
