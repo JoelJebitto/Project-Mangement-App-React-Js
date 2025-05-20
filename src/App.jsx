@@ -1,8 +1,52 @@
+import { useState } from "react";
+import MainSection from "./Sections/MainSection";
+import NavBar from "./Sections/NavBar";
+
 function App() {
+  const [data, setData] = useState([]);
+  // data[1] = {
+  //  title: string,
+  //  discription: string,
+  //  Due Date: date
+  //  todo : [ list of string todo ]
+  // }
+
+  const addProject = (title = "", discription = "", dueDate = "") => {
+    setData([
+      ...data,
+      {
+        title: title,
+        discription: discription,
+        dueDate: dueDate,
+        todo: [],
+        id: data.length() == 0 ? 0 : data[data.length() - 1].id + 1,
+      },
+    ]);
+  };
+
+  const removeProject = (id) => {
+    const temp = data;
+    temp = temp.filter((i) => i.id != id);
+    setData(temp);
+  };
+
+  const addTodo = (id, todo) => {
+    const temp = data;
+    temp[id].todo.push(todo);
+    setData(temp);
+  };
+
+  const removeTodo = (id, todo) => {
+    const temp = data;
+    temp[id].todo = data[id].todo.filter((item) => item !== todo);
+    setData(temp);
+  };
+
   return (
-    <>
-      <h1 className="my-8 text-center text-5xl font-bold">Hello World</h1>
-    </>
+    <div className="flex h-screen">
+      <NavBar />
+      <MainSection />
+    </div>
   );
 }
 
