@@ -27,8 +27,14 @@ function App() {
   };
 
   const removeProject = (id) => {
-    let temp = data;
-    temp = temp.filter((i) => i.id != id);
+    let temp = [];
+    data.map((i, ind) => {
+      if (ind != id) {
+        temp.push(i);
+        setMain(null);
+      }
+    });
+    console.log(temp);
     setData(temp);
   };
 
@@ -49,7 +55,12 @@ function App() {
   }, [main]);
   return (
     <div className="flex h-screen">
-      <NavBar project={data} setPro={setPro} main={setMain} />
+      <NavBar
+        project={data}
+        setPro={setPro}
+        main={setMain}
+        removeProject={removeProject}
+      />
       <MainSection
         data={data[pro]}
         main={main}

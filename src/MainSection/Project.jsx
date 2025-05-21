@@ -53,9 +53,9 @@ const Project = ({ data, addTodo, pro, removeTodo }) => {
         {data.todo.map((i, ind) => (
           <div
             key={ind}
-            className="bg-gray-500 px-4 py-2 hover:p-5 my-2 transition-all flex rounded-2xl shadow-xl"
+            className="bg-gray-500 hover:font-bold px-4 py-2 hover:shadow-2xl  my-2 transition-all flex rounded-2xl shadow-xl"
           >
-            <p className="my-auto">{i}</p>
+            <p className="my-auto ">{i}</p>
             <span className="flex-1" />
             <button
               type="button"
