@@ -20,12 +20,12 @@ const NavBar = ({ project, main, setPro }) => {
           <button
             key={ind}
             onClick={() => {
-              setPro(ind)
-              main(1)
+              setPro(ind);
+              main(1);
               console.log(ind);
-
             }}
-            className="bg-gray-900 mb-4 p-4 hover:font-bold w-full transition-all active:bg-gray-800 hover:text-lg hover:p-[1.01rem] text-left rounded-2xl ">
+            className="bg-gray-900 mb-4 p-4 hover:font-bold w-full transition-all active:bg-gray-800 hover:text-lg hover:p-[1.01rem] text-left rounded-2xl "
+          >
             {i.title}
           </button>
         ))}

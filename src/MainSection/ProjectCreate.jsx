@@ -17,8 +17,8 @@ const ProjectCreate = ({ setMain, addProject }) => {
     }
   };
   return (
-    <div className="flex flex-col h-full">
-      <h1 className="text-5xl text-center font-bold my-10 mt-[20%] text-gray-100 ">
+    <div className="flex p-7 flex-col h-full overflow-y-scroll">
+      <h1 className="text-5xl text-center font-bold my-10 mt-[20%] ">
         Add A New Project
       </h1>
 
@@ -45,7 +45,7 @@ const ProjectCreate = ({ setMain, addProject }) => {
         />
 
         <label htmlFor="date" className="text-xl py-1 ">
-          DOB :
+          Due Date :
         </label>
         <input
           ref={dob}

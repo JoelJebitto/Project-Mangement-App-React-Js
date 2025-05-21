@@ -34,7 +34,7 @@ function App() {
 
   const addTodo = (id, todo) => {
     let temp = data;
-    temp[id].todo.push(todo);
+    temp[id].todo = [todo, ...temp[id].todo];
     setData(temp);
   };
 
@@ -50,7 +50,15 @@ function App() {
   return (
     <div className="flex h-screen">
       <NavBar project={data} setPro={setPro} main={setMain} />
-      <MainSection main={main} setMain={setMain} addProject={addProject} />
+      <MainSection
+        data={data[pro]}
+        main={main}
+        setMain={setMain}
+        addProject={addProject}
+        addTodo={addTodo}
+        pro={pro}
+        removeTodo={removeTodo}
+      />
     </div>
   );
 }
